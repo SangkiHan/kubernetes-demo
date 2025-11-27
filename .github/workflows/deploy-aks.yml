@@ -12,9 +12,9 @@ on:
   workflow_dispatch:
 
 env:
-  AZURE_RESOURCE_GROUP: rg-kubernetes-demo
-  AKS_CLUSTER_NAME: aks-kubernetes-demo
-  ACR_NAME: acrkubernetesdemo
+  AZURE_RESOURCE_GROUP: test-kubernete
+  AKS_CLUSTER_NAME: test-kubernete
+  ACR_NAME: sangkihanKubernetes
   IMAGE_NAME: kubernetes-demo
   HELM_CHART_PATH: ./helm/kubernetes-demo
 
