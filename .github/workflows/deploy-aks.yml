@@ -118,8 +118,15 @@ jobs:
           --values ${{ env.HELM_CHART_PATH }}/values-dev.yaml \
           --set image.repository=${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }} \
           --set image.tag=${{ github.sha }} \
+          --set resources.requests.cpu=250m \
+          --set resources.requests.memory=256Mi \
+          --set resources.limits.cpu=500m \
+          --set resources.limits.memory=512Mi \
+          --set livenessProbe.initialDelaySeconds=90 \
+          --set readinessProbe.initialDelaySeconds=60 \
           --wait \
-          --timeout 5m
+          --timeout 10m \
+          --debug
 
     - name: Verify deployment
       run: |
@@ -161,8 +168,15 @@ jobs:
           --create-namespace \
           --set image.repository=${{ env.ACR_NAME }}.azurecr.io/${{ env.IMAGE_NAME }} \
           --set image.tag=${{ github.sha }} \
+          --set resources.requests.cpu=250m \
+          --set resources.requests.memory=256Mi \
+          --set resources.limits.cpu=500m \
+          --set resources.limits.memory=512Mi \
+          --set livenessProbe.initialDelaySeconds=90 \
+          --set readinessProbe.initialDelaySeconds=60 \
           --wait \
-          --timeout 5m
+          --timeout 10m \
+          --debug
 
     - name: Verify deployment
       run: |
