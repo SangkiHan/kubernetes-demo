@@ -12,6 +12,16 @@ import java.util.Map;
 @RequestMapping("/api")
 public class HealthController {
 
+    @GetMapping("/hello")
+    public Map<String, Object> hello() {
+        Map<String, Object> response = new HashMap<>();
+        response.put("message", "Hello from Kubernetes Demo!");
+        response.put("timestamp", LocalDateTime.now());
+        response.put("status", "running");
+        response.put("environment", System.getenv().getOrDefault("SPRING_PROFILES_ACTIVE", "default"));
+        return response;
+    }
+
     @GetMapping("/info")
     public Map<String, Object> info() {
         Map<String, Object> response = new HashMap<>();
