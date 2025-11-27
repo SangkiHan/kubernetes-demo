@@ -11,10 +11,10 @@ YELLOW='\033[1;33m'
 NC='\033[0m'
 
 # 변수 설정
-ACR_NAME="acrkubernetesdemo"
+ACR_NAME="sangkihanKubernetes"
 IMAGE_NAME="kubernetes-demo"
-RESOURCE_GROUP="rg-kubernetes-demo"
-AKS_NAME="aks-kubernetes-demo"
+RESOURCE_GROUP="test-kubernete"
+AKS_NAME="test-kubernete"
 NAMESPACE="dev"
 RELEASE_NAME="kubernetes-demo-dev"
 
